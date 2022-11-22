@@ -10,29 +10,21 @@ User.destroy_all
 
 user_one = User.create!(
   email: "soulalydia1@gmail.com",
- # first_name: "Lyly",
-#last_name: "La sauvage",
   password: "123456"
 )
 
 user_two = User.create!(
   email: "soso@canale.com",
-#  first_name: "c'est Soso",
- # last_name: "BB",
   password: "123456"
 )
 
 user_three = User.create!(
   email: "Ylo@gmail.com",
- # first_name: "Ylolo",
- # last_name: "Les gros Lolo",
   password: "123456"
 )
 
 user_four = User.create!(
   email: "fishfish@gmail.com",
- # first_name: "Fish",
- # last_name: "&chips",
   password: "123456"
 )
 
