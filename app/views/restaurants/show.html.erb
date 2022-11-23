@@ -8,6 +8,6 @@
 <%else%>
   <%=puts price: @restaurant.price %>
 <%end %>
-
-
 <%= link_to 'back to restaurants list', restaurants_path%>
+<%= link_to 'edit restaurant ', edit_restaurant_path%>
+<%= link_to 'Destroy',data: {:confirm => 'Are you sure?'}, :method => :delete %>

@@ -2,6 +2,8 @@
   <%= f.input :name %>
   <%= f.input :address %>
   <%= f.input :category, collection: Restaurant::CATEGORY%>
+  <%= f.input :price, collection:Restaurant::PRICE %>
+  <%= f.input :website%>
   <%= f.submit "#{ @restaurant.persisted? ? 'Update' : 'Create' } Restaurant" %>
   <%= link_to 'Back to restaurant', restaurants_path %>
 <% end %>
