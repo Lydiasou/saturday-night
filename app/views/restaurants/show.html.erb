@@ -1,1 +1,13 @@
-<h1>un restaurant</h1>
+<h1>Resto: <%= @restaurant.name %></h1>
+<ul>
+  <li>address: <%= @restaurant.address %></li>
+  <li>category: <%= @restaurant.category %></li>
+</ul>
+<%if @restaurant.price.nil?%>
+  <%= puts @restaurant.price, class: 'display-none' %>
+<%else%>
+  <%=puts price: @restaurant.price %>
+<%end %>
+<%= link_to 'back to restaurants list', restaurants_path%>
+<%= link_to 'edit restaurant ', edit_restaurant_path%>
+<%= link_to 'Destroy',data: {:confirm => 'Are you sure?'}, :method => :delete %>

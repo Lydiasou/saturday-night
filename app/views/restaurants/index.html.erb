@@ -1,1 +1,5 @@
-<h1>coucou</h1>
+<h1>Les restaurants</h1>
+<%= @restaurant.each do |resto|%>
+<%= link_to resto.name, restaurant_path(resto)%>
+<br><br><br>
+<%end%>

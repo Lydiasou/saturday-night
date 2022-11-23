@@ -28,7 +28,7 @@ class RestaurantsController < ApplicationController
 
   def update
     @restaurant.update(restaurant_params)
-    redirect_to restaurant_path(@restaurant)
+    redirect_to restaurant_path(@restaurant), notice: 'Restaurant was successfully updated.'
   end
 
   def destroy
@@ -43,7 +43,9 @@ class RestaurantsController < ApplicationController
     params.require(:restaurant).permit(
       :name,
       :address,
-      :category
+      :category,
+      :price,
+      :website
     )
   end
 end
