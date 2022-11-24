@@ -1,5 +1,6 @@
 class RestaurantsController < ApplicationController
-  skip_before_action :authenticate_user!
+  require 'debug'
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -15,7 +16,7 @@ class RestaurantsController < ApplicationController
 
   def create
     @restaurant = Restaurant.new(restaurant_params)
-    @restaurant.save!
+    @restaurant.save
     redirect_to restaurants_path(@restaurant), notice: 'new add'
     # if @restaurant.save
     #   redirect_to restaurants_path(@restaurant), notice: 'New restaurant added'
@@ -23,7 +24,9 @@ class RestaurantsController < ApplicationController
     #   render :new, status: :unprocessable_entity
     # end
   end
+
   def edit
+
   end
 
   def update
