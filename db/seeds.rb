@@ -33,7 +33,8 @@ girls = [user_one, user_two, user_three, user_four]
 restaurant_one = Restaurant.new(
   name: "Dalia",
   address: "93 rue Montmartre 75002",
-  category: 'Cuisine du monde'
+  category: 'Cuisine du monde',
+  price: '€€€'
 )
 restaurant_one.user = girls.sample
 restaurant_one.save!
@@ -41,7 +42,18 @@ restaurant_one.save!
 restaurant_two = Restaurant.new(
   name: "Terass'Hôtel",
   address: "12-14 Rue Joseph de Maistre, 75018 Paris",
-  category: 'Chic'
+  category: 'Chic',
+  price: '€€€€'
 )
 restaurant_two.user = girls.sample
 restaurant_two.save!
+
+restaurant_three = Restaurant.new(
+  name: "Le Matignon",
+  address: "Champs",
+  category: 'Chic',
+  price: '€€€€'
+)
+
+restaurant_three.user = girls.sample
+restaurant_three.save!

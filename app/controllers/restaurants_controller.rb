@@ -1,12 +1,12 @@
 class RestaurantsController < ApplicationController
   skip_before_action :authenticate_user!
+  before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
 
   def index
     @restaurant = Restaurant.all
   end
 
   def show
-    @restaurant = Restaurant.find(params[:id])
   end
 
   def new
@@ -15,15 +15,15 @@ class RestaurantsController < ApplicationController
 
   def create
     @restaurant = Restaurant.new(restaurant_params)
-    if @restaurant.save
-      redirect_to restaurant_path(@restaurant)
-    else
-      render :new, status: :unprocessable_entity
-    end
+    @restaurant.save
+    redirect_to restaurants_path(@restaurant), notice: 'new add'
+    # if @restaurant.save
+    #   redirect_to restaurants_path(@restaurant), notice: 'New restaurant added'
+    # else
+    #   render :new, status: :unprocessable_entity
+    # end
   end
-
   def edit
-    @restaurant = Restaurant.find(params[:id])
   end
 
   def update
@@ -32,9 +32,8 @@ class RestaurantsController < ApplicationController
   end
 
   def destroy
-    @restaurant = Restaurant.find(params[:id])
     @restaurant.destroy
-    redirect_to restaurant_path, status: :see_other
+    redirect_to restaurants_path, status: :see_other
   end
 
   private
@@ -44,8 +43,12 @@ class RestaurantsController < ApplicationController
       :name,
       :address,
       :category,
-      :price,
-      :website
+      :website,
+      :price
     )
+  end
+
+  def set_restaurant
+    @restaurant = Restaurant.find(params[:id])
   end
 end
