@@ -3,7 +3,13 @@
   <li>address: <%= @restaurant.address %></li>
   <li>category: <%= @restaurant.category %></li>
 </ul>
-<%=@restaurant.price = nil ? 'No price' : "Price: #{@restaurant.price}" %><br><br>
+<%=@restaurant.price = nil ? 'No price' : "Price: #{@restaurant.price}" %> <br>
+<%=@restaurant.website = nil ? 'No web site' : "site web : #{@restaurant.website}"%> <br>
+<button></button>
+
+
+
+
 
 <%= link_to 'Back to restaurants list', restaurants_path%> <br>
 <%= link_to 'Edit the restaurant ', edit_restaurant_path%> <br>

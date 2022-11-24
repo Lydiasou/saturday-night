@@ -54,6 +54,15 @@ restaurant_three = Restaurant.new(
   category: 'Chic',
   price: '€€€€'
 )
-
 restaurant_three.user = girls.sample
 restaurant_three.save!
+
+restaurant_four = Restaurant.new(
+  name: "Dalamata",
+  address: "Obekamps",
+  category: 'Italien',
+  price: '€€€',
+  website: 'https://www.gruppodalmata.com/'
+)
+restaurant_four.user = girls.sample
+restaurant_four.save!
